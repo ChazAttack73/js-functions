@@ -92,7 +92,12 @@ function divide( x, y ) {
  * @param {type: Number} x, number to be squared
  * @return {type: Number}
  */
-
+function square( x ) {
+  if ( (typeof x !== 'number') || ( isNaN( x ) ) ){
+    throw new TypeError( 'Please give me a number');
+  }
+  return x * x;
+}
 
 /**
  * Function name: calculate - Performs a mathematical operation on two numbers.

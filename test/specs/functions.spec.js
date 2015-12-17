@@ -239,3 +239,37 @@ describe('divide', function() {
     expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
   });
 });
+
+////////////function #8: square tests
+
+describe('square', function() {
+
+  it('should exist', function() {
+    expect( square ).to.exist;
+    expect( square ).to.be.a('function');
+  });
+
+  it('should return the square of parameter x', function() {
+    var result = square(8);
+
+    expect( result ).to.be.a( 'number' );
+    expect( result ).to.be.equal(64);
+
+    result = square(-3);
+
+    expect( result ).to.be.a( 'number' );
+    expect( result ).to.be.equal(9);
+  });
+
+  it('should throw an error if argument is not a number', function() {
+    var boundFn = square.bind(null, '3');
+
+    expect( boundFn ).to.throw( TypeError );
+    expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
+
+    boundFn = square.bind(null, 'NaN');
+
+    expect( boundFn ).to.throw( TypeError );
+    expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
+  });
+});
