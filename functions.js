@@ -107,7 +107,9 @@ function square( x ) {
  * @param {type: Number} y
  * @return {type: Number}
  */
+function calculate( x, y, operation ) {
 
+}
 
 /**
  * Function name: isGreaterThan - Determines if a number is larger than given value.

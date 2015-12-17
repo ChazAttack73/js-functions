@@ -273,3 +273,13 @@ describe('square', function() {
     expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
   });
 });
+
+////////////function #9: calculate tests
+
+describe('calculate', function() {
+
+  it('should exist', function() {
+    expect( calculate ).to.exist;
+    expect( calculate ).to.be.a('function');
+  });
+});
