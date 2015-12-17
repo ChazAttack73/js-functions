@@ -67,7 +67,12 @@ function subtract( x, y ) {
  * @param {type: Number} y
  * @return {type: Number}
  */
-
+function multiply( x, y ) {
+  if ( (typeof x !== 'number') || ( isNaN( x ) || (typeof y !== 'number') || ( isNaN( y ) ) ) ){
+    throw new TypeError( 'Please give me a number');
+  }
+  return x * y;
+}
 
 /**
  * Function name: divide - Divides the first number by the second and returns the remainder.

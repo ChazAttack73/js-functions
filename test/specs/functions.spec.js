@@ -171,3 +171,37 @@ describe('subtract', function() {
     expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
   });
 });
+
+////////////function #6: multiply tests
+
+describe('multiply', function() {
+
+  it('should exist', function() {
+    expect( multiply ).to.exist;
+    expect( multiply ).to.be.a('function');
+  });
+
+  it('should return the product of parameters x and y', function() {
+    var result = multiply(9, 4);
+
+    expect( result ).to.be.a( 'number' );
+    expect( result ).to.be.equal(36);
+
+    result = multiply(27, -42);
+
+    expect( result ).to.be.a( 'number' );
+    expect( result ).to.be.equal(-1134);
+  });
+
+  it('should throw an error if argument is not a number', function() {
+    var boundFn = multiply.bind(null, '3');
+
+    expect( boundFn ).to.throw( TypeError );
+    expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
+
+    boundFn = multiply.bind(null, 'NaN');
+
+    expect( boundFn ).to.throw( TypeError );
+    expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
+  });
+});
