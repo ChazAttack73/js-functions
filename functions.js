@@ -80,7 +80,12 @@ function multiply( x, y ) {
  * @param {type: Number} y
  * @return {type: Number}
  */
-
+function divide( x, y ) {
+  if ( (typeof x !== 'number') || ( isNaN( x ) || (typeof y !== 'number') || ( isNaN( y ) ) ) ){
+    throw new TypeError( 'Please give me a number');
+  }
+  return x / y;
+}
 
 /**
  * Function name: square - Multiplies a number by itself and returns the new value.

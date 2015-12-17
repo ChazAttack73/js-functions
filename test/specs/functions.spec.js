@@ -205,3 +205,37 @@ describe('multiply', function() {
     expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
   });
 });
+
+////////////function #7: divide tests
+
+describe('divide', function() {
+
+  it('should exist', function() {
+    expect( divide ).to.exist;
+    expect( divide ).to.be.a('function');
+  });
+
+  it('should return the quotient of parameters x and y', function() {
+    var result = divide(8, 4);
+
+    expect( result ).to.be.a( 'number' );
+    expect( result ).to.be.equal(2);
+
+    result = divide(27, -3);
+
+    expect( result ).to.be.a( 'number' );
+    expect( result ).to.be.equal(-9);
+  });
+
+  it('should throw an error if argument is not a number', function() {
+    var boundFn = divide.bind(null, '3');
+
+    expect( boundFn ).to.throw( TypeError );
+    expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
+
+    boundFn = divide.bind(null, 'NaN');
+
+    expect( boundFn ).to.throw( TypeError );
+    expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
+  });
+});
