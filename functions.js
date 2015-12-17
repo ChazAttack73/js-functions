@@ -3,6 +3,12 @@
  * @param  {type: Number} n
  * @return {type: String}
  */
+function numberToString( num ) {
+  if ( (typeof num !== 'number') || ( isNaN( num ) ) ) {
+    throw new TypeError( 'Please give me a number');
+  }
+  return num.toString();
+}
 
 
 /**
@@ -10,7 +16,9 @@
  * @param {type: Number} n
  * @return {type: Number}
  */
-
+function increase( num ) {
+  return num + 1;
+}
 
 /**
  * Function name: decrease - Subtracts one from a given number.
