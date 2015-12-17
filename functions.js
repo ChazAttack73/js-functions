@@ -17,6 +17,9 @@ function numberToString( num ) {
  * @return {type: Number}
  */
 function increase( num ) {
+  if ( (typeof num !== 'number') || ( isNaN( num ) ) ) {
+    throw new TypeError( 'Please give me a number');
+  }
   return num + 1;
 }
 
@@ -25,7 +28,12 @@ function increase( num ) {
  * @param {type: Number} n
  * @return {type: Number}
  */
-
+function decrease( num ) {
+  if ( (typeof num !== 'number') || ( isNaN( num ) ) ) {
+    throw new TypeError( 'Please give me a number');
+  }
+  return num - 1;
+}
 
 /**
  * Function name: add - Adds two numbers together and returns the sum.
@@ -33,7 +41,9 @@ function increase( num ) {
  * @param {type: Number} y
  * @return {type: Number}
  */
+function add( x, y ) {
 
+}
 
 /**
  * Function name: subtract - Subtracts the second number from the first and returns the result.
