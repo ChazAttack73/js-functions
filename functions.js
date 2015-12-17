@@ -42,7 +42,10 @@ function decrease( num ) {
  * @return {type: Number}
  */
 function add( x, y ) {
-
+  if ( (typeof x !== 'number') || ( isNaN( x ) || (typeof y !== 'number') || ( isNaN( y ) ) ) ){
+    throw new TypeError( 'Please give me a number');
+  }
+  return x + y;
 }
 
 /**

@@ -1,6 +1,6 @@
 var expect = chai.expect;
 
-////////////function numberToString tests
+////////////function #1: numberToString tests
 
 describe('numberToString', function() {
 
@@ -36,7 +36,7 @@ describe('numberToString', function() {
   });
 });
 
-////////////function increase tests
+////////////function #2: increase tests
 
 describe('increase', function() {
 
@@ -70,7 +70,7 @@ describe('increase', function() {
   });
 });
 
-////////////function decrease tests
+////////////function #3: decrease tests
 
 describe('decrease', function() {
 
@@ -104,12 +104,36 @@ describe('decrease', function() {
   });
 });
 
-////////////function add tests
+////////////function #4: add tests
 
 describe('add', function() {
 
   it('should exist', function() {
     expect( add ).to.exist;
     expect( add ).to.be.a('function');
+  });
+
+  it('should return the sum of parameters x and y', function() {
+    var result = add(9, 4);
+
+    expect( result ).to.be.a( 'number' );
+    expect( result ).to.be.equal(13);
+
+    result = add(27, -42);
+
+    expect( result ).to.be.a( 'number' );
+    expect( result ).to.be.equal(-15);
+  });
+
+  it('should throw an error if argument is not a number', function() {
+    var boundFn = add.bind(null, '3');
+
+    expect( boundFn ).to.throw( TypeError );
+    expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
+
+    boundFn = add.bind(null, 'NaN');
+
+    expect( boundFn ).to.throw( TypeError );
+    expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
   });
 });
