@@ -54,7 +54,12 @@ function add( x, y ) {
  * @param {type: Number} y
  * @return {type: Number}
  */
-
+function subtract( x, y ) {
+  if ( (typeof x !== 'number') || ( isNaN( x ) || (typeof y !== 'number') || ( isNaN( y ) ) ) ){
+    throw new TypeError( 'Please give me a number');
+  }
+  return x - y;
+}
 
 /**
  * Function name: multiply - Multiplies two numbers and returns the product.

@@ -137,3 +137,37 @@ describe('add', function() {
     expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
   });
 });
+
+////////////function #5: subtract tests
+
+describe('subtract', function() {
+
+  it('should exist', function() {
+    expect( subtract ).to.exist;
+    expect( subtract ).to.be.a('function');
+  });
+
+  it('should return the difference of parameters x and y', function() {
+    var result = subtract(9, 4);
+
+    expect( result ).to.be.a( 'number' );
+    expect( result ).to.be.equal(5);
+
+    result = subtract(27, -42);
+
+    expect( result ).to.be.a( 'number' );
+    expect( result ).to.be.equal(69);
+  });
+
+  it('should throw an error if argument is not a number', function() {
+    var boundFn = subtract.bind(null, '3');
+
+    expect( boundFn ).to.throw( TypeError );
+    expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
+
+    boundFn = subtract.bind(null, 'NaN');
+
+    expect( boundFn ).to.throw( TypeError );
+    expect( boundFn ).to.throw( TypeError, 'Please give me a number' );
+  });
+});
